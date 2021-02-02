@@ -1,12 +1,10 @@
 import {combineReducers, configureStore} from "@reduxjs/toolkit";
 import toolkitSlice from "./toolkitSlice";
 
-const rootReducer: any = combineReducers({
-    toolkit: toolkitSlice
-});
+// const rootReducer: any = combineReducers({
+//     toolkit: toolkitSlice
+// });
 
 export const store: any = configureStore({
-    reducer: rootReducer,
+    reducer: toolkitSlice,
 });
-
-export type RootState = ReturnType<typeof rootReducer>

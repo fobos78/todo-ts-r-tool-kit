@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from "react-redux";
-import { addTodo, removeLastTodo } from '../../ToolkitRedux/toolkitSlice';
+import { addTodo, removeLastTodo, countPlus } from '../../ToolkitRedux/toolkitSlice';
 
 function Todo() {
   const [todo, setTodo] = useState('');
-  const todos: any = useSelector((state: any) => state.toolkit.todos);
+  const todos: any = useSelector((state: any) => state.todos);
+  const count: any = useSelector((state: any) => state.count);
   const dispatch = useDispatch();
 
   function changTodo(){
@@ -17,9 +18,11 @@ function Todo() {
 
   return (
     <div>
+        <div>My count - &nbsp;{count}</div>
       <input onChange={changTodos} value={todo} />
       <button type="button" onClick={changTodo}>Add</button>
       <button type="button" onClick={() => dispatch(removeLastTodo())}>Delete Last</button>
+      <button type="button" onClick={() => dispatch(countPlus())}>count + 1</button>
       {todos.map((el: any) => (
         <h3 key={Math.random()}>{
             el
