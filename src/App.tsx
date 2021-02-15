@@ -2,6 +2,8 @@ import React from "react";
 import styled from "styled-components/macro";
 import { Provider } from "react-redux";
 import { store } from "./ToolkitRedux";
+import 'antd/dist/antd.css';
+
 // import 'styled-components';
 
 import Todo from "./components/Todo";
@@ -21,7 +23,7 @@ function App() {
 export default App;
 
 const Title = styled.h1`
-  font-size: 1.5em;
+  font-size: 1em;
   text-align: center;
   color: palevioletred;
 `;
